@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#E9EDF1"
+    tools:context=".AddMedicine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="@string/medicine_name"
+            android:id="@+id/medicineNameEditTextId"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="Manufacture"
+                android:layout_marginLeft="3dp"
+                android:textSize="18sp"
+                />
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinnerManufactureId"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
+
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="@string/box_pattern"
+            android:id="@+id/boxpatternEditTextId"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="22dp"
+                android:paddingLeft="15dp"
+                android:hint="@string/medicine_category"
+                android:id="@+id/medicineCategoryEditTextId"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_marginBottom="10dp"
+                />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/medicineCategorySpinnerId"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="Medicine Type"
+                android:layout_marginLeft="3dp"
+                android:textSize="18sp"
+                />
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:textAlignment="textEnd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spinnerMedicineTypeId"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="Medicine Unit"
+            android:id="@+id/medicineUnitEditTextId"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"
+            android:inputType="text"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="Generic Name"
+                android:layout_marginLeft="3dp"
+                android:textSize="18sp"
+                />
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:textAlignment="textEnd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spinnerGenericNameId"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </LinearLayout>
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="Sell price"
+            android:textSize="18sp"
+            android:id="@+id/sellPriceEditTextId"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="Menufacture price"
+            android:id="@+id/manufacturePriceEditTextId"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"
+            android:textSize="18sp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@drawable/edittext_background"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:hint="Shelf Number"
+            android:textSize="18sp"
+            android:id="@+id/shelfNumberEditTextId"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"
+            />
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Medicine"
+            android:id="@+id/addMedicineButtonId"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:textSize="20sp"
+            android:backgroundTint="@color/green"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

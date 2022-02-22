@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".SubDeshboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medicineListCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/card_background6">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/medicine_List"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medicineCategoryCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="vertical"
+                android:background="@drawable/card_background1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/medicine_Category"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medicineTypeCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/card_background2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/medicine_Type"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/medicineUnitCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="vertical"
+                android:background="@drawable/card_background3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/medicine_Unit"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/genericNameCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/card_background4">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/generic_Name"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/manufactureCardViewId"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="vertical"
+                android:background="@drawable/card_background5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/manufacture"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

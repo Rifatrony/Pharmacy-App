@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".SupplierActivity">
+
+    <EditText
+        android:id="@+id/supplierEditTextId"
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_text_background"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:hint="Add Supplier"
+        />
+
+    <EditText
+        android:id="@+id/supplierContactEditTextId"
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_text_background"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:hint="Phone"
+        android:inputType="number"
+        />
+
+    <Button
+        android:id="@+id/supplierButtonId"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_for_button"
+        />
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Pharmacy App</string>
+
+    <string name="dashboard">ড্যাশবোর্ড</string>
+    <string name="add_Note">নোট যোগ করুন</string>
+
+
+    <string name="uname">ব্যবহারকারীর নাম</string>
+    <string name="pass">পাসওয়ার্ড</string>
+    <string name="signinbtn">সাইন ইন করুন</string>
+    <string name="signupbtn">নিবন্ধন করুন</string>
+    <string name="signUpFullName">পুরো নাম</string>
+    <string name="signUpPhone">ফোন</string>
+    <string name="passrecheck">পাসওয়ার্ড নিশ্চিত করুন</string>
+    <string name="signUpEmail">ইমেইল</string>
+
+    <!--Purchase Medicine String start here-->
+
+    <string name="no_account_sign_up">অ্যাকাউন্ট নেই? নিবন্ধন করুন</string>
+    <string name="Alreadyhaveaccount">অ্যাকাউন্ট আছে? সাইন ইন করুন</string>
+    <string name="login">প্রবেশ করুন</string>
+    <string name="signUp">নিবন্ধন করুন</string>
+    <string name="youremail">আপনার ইমেইল</string>
+    <string name="yourpassword">আপনার পাসওয়ার্ড</string>
+    <string name="SignInHere">এখানে সাইন ইন করুন</string>
+    <string name="SignUnHere">এখানে নিবন্ধন করুন</string>
+
+    <string name="change_language">ভাষা পরিবর্তন করুন</string>
+
+    <string name="todays_sale">আজকের বিক্রি</string>
+    <string name="tk">টাকা</string>
+    <string name="total_sale">মোট বিক্রয়</string>
+    <string name="balance">মোট টাকা</string>
+
+    <string name="medicine">ঔষুধ</string>
+    <string name="stock">স্টক</string>
+    <string name="purchase">ক্রয়</string>
+    <string name="sell">বিক্রি</string>
+    <string name="customer">ক্রেতা</string>
+    <string name="account">হিসাব</string>
+    <string name="note">নোট</string>
+    <string name="all_report">সব রিপোর্ট</string>
+    <string name="expire_soon">শীঘ্রই মেয়াদ শেষ</string>
+    <string name="supplier">সরবরাহকারী</string>
+    <string name="addSupplier">নতুন সরবরাহকারী যোগ করুন </string>
+    <string name="dueSupplier">বকেয়া সরবরাহকারীর তালিকা  </string>
+
+    <string name="medicine_List">ঔষুধের তালিকা</string>
+    <string name="medicine_Category">মেডিসিন বিভাগ</string>
+    <string name="medicine_Type">ঔষুধের ধরন</string>
+    <string name="medicine_Unit">মেডিসিন ইউনিট</string>
+    <string name="generic_Name">জেনেরিক নাম</string>
+    <string name="manufacture">প্রস্তুতকারক </string>
+
+    <string name="save">সংরক্ষণ</string>
+
+    <string name="searchByMedicineName">ঔষুধের নাম দ্বারা সার্চ করুন</string>
+    <string name="searchBySupplierName">সরবরাহকারীর নাম দ্বারা সার্চ করুন</string>
+    <string name="supplierList">সরবরাহকারীর তালিকা</string>
+
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="medicine_name">ওষুধের নাম</string>
+    <string name="select_buy_date">তারিখ</string>
+    <string name="payment_type">Payment Type</string>
+    <string name="unit_price">একক দাম</string>
+    <string name="purchase_Quantity">ক্রয় পরিমাণ</string>
+    <string name="manufacture_price">উত্পাদন মূল্য</string>
+    <string name="stock_Quantity">স্টক পরিমাণ</string>
+    <string name="select_expire_date">মেয়াদ উত্তীর্ণের তারিখ</string>
+    <string name="total_Price">মোট দাম</string>
+    <string name="paid_Amount">পরিশোধিত টাকার পরিমান</string>
+    <string name="due_Amount">বাকির পরিমান</string>
+    <string name="purchase_btn">ক্রয়</string>
+
+    <string name="customer_Name">ক্রেতার নাম</string>
+    <string name="sell_Date">বিক্রির তারিখ</string>
+    <string name="sell_Quantity">বিক্রি পরিমাণ</string>
+    <string name="sell_btn">বিক্রি</string>
+    <string name="unit_Sell_Price">ইউনিট বিক্রয় মূল্য</string>
+
+    <string name="bank_Account">ব্যাংক হিসাব</string>
+    <string name="bank_Name">Bank Name</string>
+    <string name="account_Name">Account Name</string>
+    <string name="account_Number">Account Number</string>
+    <string name="account_Type">Account Type</string>
+    <string name="branch_Name">Branch Name</string>
+    <string name="opening_Balance">Opening Balance</string>
+
+    <string name="title">শিরোনাম</string>
+    <string name="description">বর্ণনা</string>
+
+    <string name="batch_id">Batch Id</string>
+    <string name="box_pattern">Box pattern</string>
+    <string name="medicine_category">Medicine category</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Purchase Medicine String end here-->
+
+</resources>

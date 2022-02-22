@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Update Customer"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:background="@color/sky_blue"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="10dp"
+            android:hint="Customer Name"
+            android:id="@+id/updateCustomerName"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="10dp"
+            android:hint="Customer Contact"
+            android:id="@+id/updateCustomerContact"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginTop="10dp"
+            android:hint="Customer Contact"
+            android:id="@+id/updateCustomerAddress"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="10dp"
+            android:text="Update"
+            android:id="@+id/updateCustomerButton"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

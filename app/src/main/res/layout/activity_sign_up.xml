@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/ppp"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_marginBottom="50dp"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:alpha="0.8"
+        android:background="@drawable/login_background_shape_design">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/SignUnHere"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="10dp"
+            android:hint="@string/youremail"
+            android:background="@drawable/edittext_background"
+            android:id="@+id/signUpEmailEditTextId"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/yourpassword"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/lock_icon"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/signUpPasswordEditTextId"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:id="@+id/signUpButtonId"
+            android:background="@drawable/background_for_button"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:text="@string/signUp"/>
+
+        <TextView
+            android:id="@+id/signInTextViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/Alreadyhaveaccount"
+            android:textSize="20sp"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#E41010"
+            android:outlineSpotShadowColor="@color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

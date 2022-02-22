@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".ExpireSoonMedicine">
+
+    <EditText
+        android:id="@+id/searchExpireMedicine"
+        android:paddingLeft="15dp"
+        android:hint="Search By Medicine Name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edittext_background"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expireSoonRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchExpireMedicine"
+        />
+
+</RelativeLayout>

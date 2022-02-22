@@ -1,0 +1,111 @@
+<resources>
+
+    <string name="app_name">Smart Pharmacy App</string>
+
+    <string name="dashboard">DashBoard</string>
+    <string name="add_Note">Add Note</string>
+
+    <string name="uname">User Name</string>
+    <string name="pass">Password</string>
+    <string name="signinbtn">Sign In</string>
+    <string name="signupbtn">Sign Up</string>
+    <string name="signUpFullName">Full Name</string>
+    <string name="signUpPhone">Phone</string>
+    <string name="passrecheck">Confirm Password</string>
+    <string name="signUpEmail">Email</string>
+
+    <!--Purchase Medicine String start here-->
+
+    <string name="no_account_sign_up">No account yet? Sign Up.</string>
+    <string name="Alreadyhaveaccount">Already have account? Sign In.</string>
+    <string name="login">Login</string>
+    <string name="signUp">Sign Up</string>
+    <string name="youremail">Your Email</string>
+    <string name="yourpassword">Your Password</string>
+    <string name="SignInHere">Sign In Here</string>
+    <string name="SignUnHere">Sign Up Here</string>
+
+    <string name="change_language">Change Language</string>
+
+
+    <string name="todays_sale">Today Sale</string>
+    <string name="tk">Tk.</string>
+    <string name="total_sale">Total Sale</string>
+    <string name="balance">Balance</string>
+
+
+    <string name="medicine">Medicine</string>
+    <string name="stock">Stock</string>
+    <string name="purchase">Purchase</string>
+    <string name="sell">Sell</string>
+    <string name="customer">Customer</string>
+    <string name="account">Account</string>
+    <string name="note">Note</string>
+    <string name="all_report">All Report</string>
+    <string name="expire_soon">Expire Soon</string>
+    <string name="supplier">Supplier</string>
+    <string name="addSupplier">Add new Supplier</string>
+    <string name="dueSupplier">Due Supplier</string>
+
+    <string name="medicine_List">Medicine List</string>
+    <string name="medicine_Category">Medicine Category</string>
+    <string name="medicine_Type">Medicine Type</string>
+    <string name="medicine_Unit">Medicine Unit</string>
+    <string name="generic_Name">Generic Name</string>
+    <string name="manufacture">Manufacture</string>
+
+    <string name="save">Save</string>
+
+
+    <string name="searchByMedicineName">Search by Medicine Name</string>
+    <string name="searchBySupplierName">Search by Supplier Name</string>
+    <string name="supplierList">Supplier List</string>
+
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="medicine_name">Medicine Name</string>
+    <string name="select_buy_date">Date</string>
+    <string name="payment_type">Payment Type</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="purchase_Quantity">Purchase Quantity</string>
+    <string name="manufacture_price">Manufacture Price</string>
+    <string name="stock_Quantity">Stock quantity</string>
+    <string name="select_expire_date">Expire Date</string>
+    <string name="total_Price">Total Price</string>
+    <string name="paid_Amount">Paid Amount</string>
+    <string name="due_Amount">Due Amount</string>
+    <string name="purchase_btn">Purchase</string>
+
+
+    <string name="customer_Name">Customer Name</string>
+    <string name="sell_Date">Date</string>
+    <string name="sell_Quantity">Sell Quantity</string>
+    <string name="sell_btn">Sell</string>
+    <string name="unit_Sell_Price">Unit Sell Price</string>
+
+
+    <string name="bank_Account">Bank Account</string>
+    <string name="bank_Name">Bank Name</string>
+    <string name="account_Name">Account Name</string>
+    <string name="account_Number">Account Number</string>
+    <string name="account_Type">Account Type</string>
+    <string name="branch_Name">Branch Name</string>
+    <string name="opening_Balance">Opening Balance</string>
+
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
+
+    <string name="batch_id">Batch Id</string>
+    <string name="box_pattern">Box pattern</string>
+    <string name="medicine_category">Medicine category</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Purchase Medicine String end here-->
+
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".CustomerDetails">
+
+    <EditText
+        android:id="@+id/customerSearchId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Search By Customer Name"
+        android:drawableRight="@drawable/ic_search"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/customerDetailsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/customerSearchId" />
+
+</RelativeLayout>

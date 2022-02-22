@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    tools:context=".GenericName">
+
+    <EditText
+        android:layout_marginTop="50dp"
+        android:id="@+id/genericNameEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Generic Name (e.g. Paracetamol)"
+
+        android:backgroundTint="@color/black"
+        />
+
+    <Button
+        android:id="@+id/genericNameSaveButtonId"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        android:textColor="@color/white"
+        android:backgroundTint="#45BD17"
+        />
+
+</LinearLayout>

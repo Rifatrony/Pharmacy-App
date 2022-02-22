@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeMenuId"
+            android:title="Home"
+            android:icon="@drawable/home_icon"
+            />
+        <item
+            android:id="@+id/medicineId"
+            android:title="Medicine"
+            android:icon="@drawable/medicine_icon"
+            />
+
+        <item
+            android:id="@+id/cId"
+            android:title="Purchase Medicine"
+            android:icon="@drawable/ic_baseline_add_circle_24"
+            />
+        <item
+            android:id="@+id/dId"
+            android:title="Sell Medicine"
+            android:icon="@drawable/ic_baseline_minimize_24"
+            />
+        <item
+            android:id="@+id/stockMedicineId"
+            android:title="Stock Medicine"
+            android:icon="@drawable/stock_icon"
+            />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/eId"
+                android:title="E"
+                android:icon="@drawable/home_icon"
+                />
+            <item
+                android:id="@+id/fId"
+                android:title="F"
+                android:icon="@drawable/home_icon"
+                />
+
+        </menu>
+    </item>
+
+
+</menu>

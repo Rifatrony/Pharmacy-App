@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Pharmacy-App/app/src/main/res/layout/activity_main_dash_board.xml" value="0.1" />
         <entry key="..\:/Pharmacy-Project/app/src/main/res/drawable/background_color_for_page.xml" value="0.1859375" />
         <entry key="..\:/Pharmacy-Project/app/src/main/res/drawable/background_for_button.xml" value="0.1859375" />
         <entry key="..\:/Pharmacy-Project/app/src/main/res/drawable/background_shape.xml" value="0.15" />
@@ -161,7 +162,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

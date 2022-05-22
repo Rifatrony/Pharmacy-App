@@ -9,14 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SearchView;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.pharmacyapp.Adapter.ShowMedicineAdapter;
+import com.example.pharmacyapp.Model.AddMedicineModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,12 +29,12 @@ import java.util.ArrayList;
 public class ViewMedicineActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    showMedicineAdapter adapter;
+    ShowMedicineAdapter adapter;
     FloatingActionButton fb;
 
     EditText medicineSearch;
     DatabaseReference databaseReference;
-    ArrayList<addMedicineDataHolder> list;
+    ArrayList<AddMedicineModel> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +91,7 @@ public class ViewMedicineActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        adapter = new showMedicineAdapter(this,list);
+        adapter = new ShowMedicineAdapter(this,list);
         recyclerView.setAdapter(adapter);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -101,7 +99,7 @@ public class ViewMedicineActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for (DataSnapshot data : snapshot.getChildren()){
-                    addMedicineDataHolder obj = data.getValue(addMedicineDataHolder.class);
+                    AddMedicineModel obj = data.getValue(AddMedicineModel.class);
                     list.add(obj);
                 }
 
@@ -135,9 +133,9 @@ public class ViewMedicineActivity extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<addMedicineDataHolder> filteredList = new ArrayList<>();
+        ArrayList<AddMedicineModel> filteredList = new ArrayList<>();
 
-        for (addMedicineDataHolder item : list) {
+        for (AddMedicineModel item : list) {
             if (item.getM_name().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

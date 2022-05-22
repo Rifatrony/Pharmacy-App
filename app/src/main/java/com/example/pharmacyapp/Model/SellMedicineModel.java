@@ -1,15 +1,15 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class SellMedicineDataHolder {
+public class SellMedicineModel {
 
     String customer_name, medicine_name, sell_date, payment_type, stock_quantity,
             sell_quantity, unit_sell_price, total_price, paid_amount, due_amount;
 
 
-    public SellMedicineDataHolder() {
+    public SellMedicineModel() {
     }
 
-    public SellMedicineDataHolder(String customer_name, String medicine_name, String sell_date, String payment_type, String stock_quantity, String sell_quantity, String unit_sell_price, String total_price, String paid_amount, String due_amount) {
+    public SellMedicineModel(String customer_name, String medicine_name, String sell_date, String payment_type, String stock_quantity, String sell_quantity, String unit_sell_price, String total_price, String paid_amount, String due_amount) {
         this.customer_name = customer_name;
         this.medicine_name = medicine_name;
         this.sell_date = sell_date;

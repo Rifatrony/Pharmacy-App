@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.pharmacyapp.Adapter.MedicineCategoryAdapter;
+import com.example.pharmacyapp.Model.MedicineCategoryModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +29,7 @@ public class ShowMedicineCategory extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     MedicineCategoryAdapter adapter;
-    ArrayList<MedicineCategoryDataHolder> list;
+    ArrayList<MedicineCategoryModel> list;
 
 
     FirebaseUser user;
@@ -75,7 +77,7 @@ public class ShowMedicineCategory extends AppCompatActivity {
                 list.clear();
 
                 for (DataSnapshot data : snapshot.getChildren()){
-                    MedicineCategoryDataHolder pd = data.getValue(MedicineCategoryDataHolder.class);
+                    MedicineCategoryModel pd = data.getValue(MedicineCategoryModel.class);
                     list.add(pd);
                 }
 

@@ -1,13 +1,13 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class TransactionDataHolder {
+public class TransactionModel {
 
     String uid, reason, date, amount, bank, name;
 
-    public TransactionDataHolder() {
+    public TransactionModel() {
     }
 
-    public TransactionDataHolder(String uid, String reason, String date, String amount, String bank, String name) {
+    public TransactionModel(String uid, String reason, String date, String amount, String bank, String name) {
         this.uid = uid;
         this.reason = reason;
         this.date = date;

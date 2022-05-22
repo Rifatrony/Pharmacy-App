@@ -11,7 +11,8 @@ import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.pharmacyapp.Adapter.StockAdapter;
+import com.example.pharmacyapp.Model.StockMedicineModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +28,7 @@ public class StockMedicine extends AppCompatActivity {
     EditText stockSearch;
     DatabaseReference dbStock;
     StockAdapter adapter;
-    ArrayList<StockMedicineDataHolder> list;
+    ArrayList<StockMedicineModel> list;
     RecyclerView stockRecyclerView;
     FirebaseUser user;
 
@@ -75,7 +76,7 @@ public class StockMedicine extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    StockMedicineDataHolder pd = data.getValue(StockMedicineDataHolder.class);
+                    StockMedicineModel pd = data.getValue(StockMedicineModel.class);
                     list.add(pd);
                 }
 
@@ -103,9 +104,9 @@ public class StockMedicine extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<StockMedicineDataHolder> filteredList = new ArrayList<>();
+        ArrayList<StockMedicineModel> filteredList = new ArrayList<>();
 
-        for (StockMedicineDataHolder item : list) {
+        for (StockMedicineModel item : list) {
             if (item.getMedicineName().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

@@ -1,14 +1,14 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class addAccountDataHolder {
+public class AddAccountModel {
 
     String bank_name, account_name, account_number,account_type, branch, opening_balance, uid;
 
-    public addAccountDataHolder() {
+    public AddAccountModel() {
 
     }
 
-    public addAccountDataHolder(String bank_name, String account_name, String account_number, String account_type, String branch, String opening_balance, String uid) {
+    public AddAccountModel(String bank_name, String account_name, String account_number, String account_type, String branch, String opening_balance, String uid) {
         this.bank_name = bank_name;
         this.account_name = account_name;
         this.account_number = account_number;

@@ -1,13 +1,13 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class MedicineUnitDataHolder {
+public class MedicineUnitModel {
 
     String medicine_unit, uid;
 
-    public MedicineUnitDataHolder() {
+    public MedicineUnitModel() {
     }
 
-    public MedicineUnitDataHolder(String medicine_unit, String uid) {
+    public MedicineUnitModel(String medicine_unit, String uid) {
         this.medicine_unit = medicine_unit;
         this.uid = uid;
     }

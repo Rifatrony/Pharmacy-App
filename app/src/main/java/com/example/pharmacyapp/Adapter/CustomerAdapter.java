@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.pharmacyapp.Model.CustomerModel;
+import com.example.pharmacyapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,9 +28,9 @@ import java.util.Map;
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<CustomerDataHolder> list;
+    ArrayList<CustomerModel> list;
 
-    public CustomerAdapter(Context context, ArrayList<CustomerDataHolder> list) {
+    public CustomerAdapter(Context context, ArrayList<CustomerModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -44,7 +44,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        CustomerDataHolder data = list.get(position);
+        CustomerModel data = list.get(position);
         holder.customer_name.setText(data.getCustomer_name());
         holder.customer_contact.setText(data.getCustomer_contact());
         holder.customer_address.setText(data.getCustomer_address());
@@ -131,7 +131,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         return list.size();
     }
 
-    public void filterList(ArrayList<CustomerDataHolder> filteredList) {
+    public void filterList(ArrayList<CustomerModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

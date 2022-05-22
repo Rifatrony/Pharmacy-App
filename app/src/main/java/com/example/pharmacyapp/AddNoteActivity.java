@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.AddNoteModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -90,7 +91,7 @@ public class AddNoteActivity extends AppCompatActivity {
             return;
         }
 
-        addNoteDataholder obj = new addNoteDataholder(title, description, note_uid);
+        AddNoteModel obj = new AddNoteModel(title, description, note_uid);
 
         db1= FirebaseDatabase.getInstance().getReference(user.getUid());
         db1.child("Medicine").child("Note Details").child(note_uid).setValue(obj);

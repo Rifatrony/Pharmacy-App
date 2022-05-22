@@ -1,13 +1,13 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class CustomerDataHolder {
+public class CustomerModel {
 
     String customer_name, customer_contact, customer_address, uid, total_due;
 
-    public CustomerDataHolder() {
+    public CustomerModel() {
     }
 
-    public CustomerDataHolder(String customer_name, String customer_contact, String customer_address, String uid, String total_due) {
+    public CustomerModel(String customer_name, String customer_contact, String customer_address, String uid, String total_due) {
         this.customer_name = customer_name;
         this.customer_contact = customer_contact;
         this.customer_address = customer_address;

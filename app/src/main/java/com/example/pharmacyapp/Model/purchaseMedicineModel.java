@@ -1,22 +1,22 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class purchaseMedicineDataHolder {
+public class purchaseMedicineModel {
 
     String s_manufacture, s_medicine_name,
             buy_date, payment_type, batch_id, expire_date,
             quantity, manufacture_price, total_price, purchase_paid_amount,
             purchase_due_amount, purchase_Uid, s_supplier_name, account_balance;
 
-    public purchaseMedicineDataHolder() {
+    public purchaseMedicineModel() {
 
 
     }
 
-    public purchaseMedicineDataHolder(String s_manufacture, String s_medicine_name, String buy_date,
-                                      String payment_type, String batch_id, String expire_date,
-                                      String quantity, String manufacture_price, String total_price,
-                                      String purchase_paid_amount, String purchase_due_amount,
-                                      String purchase_Uid, String s_supplier_name, String account_balance) {
+    public purchaseMedicineModel(String s_manufacture, String s_medicine_name, String buy_date,
+                                 String payment_type, String batch_id, String expire_date,
+                                 String quantity, String manufacture_price, String total_price,
+                                 String purchase_paid_amount, String purchase_due_amount,
+                                 String purchase_Uid, String s_supplier_name, String account_balance) {
 
 
         this.s_manufacture = s_manufacture;

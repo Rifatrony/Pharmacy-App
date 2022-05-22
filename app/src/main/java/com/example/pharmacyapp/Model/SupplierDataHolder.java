@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
 public class SupplierDataHolder {
 

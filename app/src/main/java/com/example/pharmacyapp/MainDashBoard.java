@@ -3,7 +3,6 @@ package com.example.pharmacyapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -13,6 +12,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.pharmacyapp.Model.SellMedicineModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
 import com.example.pharmacyapp.databinding.ActivityMainDashBoardBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -149,7 +150,7 @@ public class MainDashBoard extends AppCompatActivity implements View.OnClickList
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
-                    addAccountDataHolder data = snapshot1.getValue(addAccountDataHolder.class);
+                    AddAccountModel data = snapshot1.getValue(AddAccountModel.class);
 
                     assert data != null;
                     balance += Double.parseDouble(data.getOpening_balance());
@@ -195,7 +196,7 @@ public class MainDashBoard extends AppCompatActivity implements View.OnClickList
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
-                    SellMedicineDataHolder data = snapshot1.getValue(SellMedicineDataHolder.class);
+                    SellMedicineModel data = snapshot1.getValue(SellMedicineModel.class);
 
                     if (data != null) {
 

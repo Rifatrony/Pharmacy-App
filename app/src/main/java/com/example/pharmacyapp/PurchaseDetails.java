@@ -9,12 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.SearchView;
 
+import com.example.pharmacyapp.Adapter.PurchaseAdapter;
+import com.example.pharmacyapp.Model.purchaseMedicineModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +33,7 @@ public class PurchaseDetails extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     PurchaseAdapter adapter;
-    ArrayList<purchaseMedicineDataHolder> list;
+    ArrayList<purchaseMedicineModel> list;
 
 
     FirebaseUser user;
@@ -94,7 +94,7 @@ public class PurchaseDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    purchaseMedicineDataHolder pd = data.getValue(purchaseMedicineDataHolder.class);
+                    purchaseMedicineModel pd = data.getValue(purchaseMedicineModel.class);
                     list.add(pd);
                 }
 
@@ -120,9 +120,9 @@ public class PurchaseDetails extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<purchaseMedicineDataHolder> filteredList = new ArrayList<>();
+        ArrayList<purchaseMedicineModel> filteredList = new ArrayList<>();
 
-        for (purchaseMedicineDataHolder item : list) {
+        for (purchaseMedicineModel item : list) {
             if (item.getS_medicine_name().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

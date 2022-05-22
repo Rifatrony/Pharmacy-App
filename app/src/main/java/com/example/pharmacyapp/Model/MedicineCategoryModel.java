@@ -1,12 +1,12 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class MedicineCategoryDataHolder {
+public class MedicineCategoryModel {
     String category, uid;
 
-    public MedicineCategoryDataHolder() {
+    public MedicineCategoryModel() {
     }
 
-    public MedicineCategoryDataHolder(String category, String uid) {
+    public MedicineCategoryModel(String category, String uid) {
         this.category = category;
         this.uid = uid;
     }

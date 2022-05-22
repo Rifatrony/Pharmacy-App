@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.R;
+import com.example.pharmacyapp.Model.purchaseMedicineModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,9 +24,9 @@ public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyView
 
 
     Context context;
-    ArrayList<purchaseMedicineDataHolder> list;
+    ArrayList<purchaseMedicineModel> list;
 
-    public PurchaseAdapter(Context context, ArrayList<purchaseMedicineDataHolder> list) {
+    public PurchaseAdapter(Context context, ArrayList<purchaseMedicineModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -39,7 +41,7 @@ public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        purchaseMedicineDataHolder data = list.get(position);
+        purchaseMedicineModel data = list.get(position);
 
         holder.supplierNameTextView.setText(data.getS_supplier_name());
         holder.medicineNameTextView.setText(data.getS_medicine_name());
@@ -91,7 +93,7 @@ public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyView
         return list.size();
     }
 
-    public void filterList(ArrayList<purchaseMedicineDataHolder> filteredList) {
+    public void filterList(ArrayList<purchaseMedicineModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

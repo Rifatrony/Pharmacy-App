@@ -11,17 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pharmacyapp.R;
-import com.example.pharmacyapp.addAccountDataHolder;
+import com.example.pharmacyapp.Model.AddAccountModel;
 
 import java.util.ArrayList;
 
 public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<addAccountDataHolder> list;
+    ArrayList<AddAccountModel> list;
     //ArrayList<addAccountDataHolder> newSearchList;
 
-    public AccountAdapter(Context context, ArrayList<addAccountDataHolder> list) {
+    public AccountAdapter(Context context, ArrayList<AddAccountModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -35,7 +35,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        addAccountDataHolder data = list.get(position);
+        AddAccountModel data = list.get(position);
         holder.bankName.setText(data.getBank_name());
         holder.accountName.setText(data.getAccount_name());
         holder.accountNumber.setText(data.getAccount_number());

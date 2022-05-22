@@ -1,6 +1,5 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,26 +16,24 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.pharmacyapp.Model.AddMedicineModel;
+import com.example.pharmacyapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
-import com.orhanobut.dialogplus.DialogPlus;
-import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class showMedicineAdapter extends RecyclerView.Adapter<showMedicineAdapter.MyViewHolder> {
+public class ShowMedicineAdapter extends RecyclerView.Adapter<ShowMedicineAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<addMedicineDataHolder> list;
+    ArrayList<AddMedicineModel> list;
 
-    public showMedicineAdapter(Context context, ArrayList<addMedicineDataHolder> list) {
+    public ShowMedicineAdapter(Context context, ArrayList<AddMedicineModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -46,13 +42,13 @@ public class showMedicineAdapter extends RecyclerView.Adapter<showMedicineAdapte
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.view_medicine_sample_layout,parent,false);
-        return new showMedicineAdapter.MyViewHolder(v);
+        return new ShowMedicineAdapter.MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        addMedicineDataHolder data = list.get(position);
+        AddMedicineModel data = list.get(position);
 
         holder.m_name.setText(data.getM_name());
         holder.s_manufacture.setText(data.getS_manufacture());
@@ -184,7 +180,7 @@ public class showMedicineAdapter extends RecyclerView.Adapter<showMedicineAdapte
         return list.size();
     }
 
-    public void filterList(ArrayList<addMedicineDataHolder> filteredList) {
+    public void filterList(ArrayList<AddMedicineModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

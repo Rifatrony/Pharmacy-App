@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.pharmacyapp.Adapter.AccountAdapter;
+import com.example.pharmacyapp.Model.AddAccountModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,7 +29,7 @@ public class Accounts extends AppCompatActivity {
 
     AccountAdapter adapter;
     RecyclerView accountRecyclerView;
-    ArrayList<addAccountDataHolder> list;
+    ArrayList<AddAccountModel> list;
 
     DatabaseReference db;
     FirebaseUser user;
@@ -70,7 +71,7 @@ public class Accounts extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    addAccountDataHolder obj = data.getValue(addAccountDataHolder.class);
+                    AddAccountModel obj = data.getValue(AddAccountModel.class);
                     list.add(obj);
                 }
 

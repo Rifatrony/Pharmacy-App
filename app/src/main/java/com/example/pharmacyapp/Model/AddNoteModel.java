@@ -1,14 +1,14 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class addNoteDataholder {
+public class AddNoteModel {
 
     String title;
     String description, note_uid;
 
-    public addNoteDataholder() {
+    public AddNoteModel() {
     }
 
-    public addNoteDataholder(String title, String description, String note_uid) {
+    public AddNoteModel(String title, String description, String note_uid) {
         this.title = title;
         this.description = description;
         this.note_uid = note_uid;

@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,14 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.R;
+import com.example.pharmacyapp.Model.purchaseMedicineModel;
+
 import java.util.ArrayList;
 
 public class ExpireSoonAdapter extends RecyclerView.Adapter<ExpireSoonAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<purchaseMedicineDataHolder> list;
+    ArrayList<purchaseMedicineModel> list;
 
-    public ExpireSoonAdapter(Context context, ArrayList<purchaseMedicineDataHolder> list) {
+    public ExpireSoonAdapter(Context context, ArrayList<purchaseMedicineModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -32,7 +35,7 @@ public class ExpireSoonAdapter extends RecyclerView.Adapter<ExpireSoonAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        purchaseMedicineDataHolder data = list.get(position);
+        purchaseMedicineModel data = list.get(position);
         holder.supplier.setText(data.getS_supplier_name());
         holder.batchId.setText(data.getBatch_id());
         holder.medicine_name.setText(data.getS_medicine_name());
@@ -47,7 +50,7 @@ public class ExpireSoonAdapter extends RecyclerView.Adapter<ExpireSoonAdapter.My
     }
 
 
-    public void filterList(ArrayList<purchaseMedicineDataHolder> filteredList) {
+    public void filterList(ArrayList<purchaseMedicineModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

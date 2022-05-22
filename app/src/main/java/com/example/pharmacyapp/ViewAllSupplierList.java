@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.example.pharmacyapp.Adapter.AllSupplierAdapter;
+import com.example.pharmacyapp.Model.SupplierDataHolder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

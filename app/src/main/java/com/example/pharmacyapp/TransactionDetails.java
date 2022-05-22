@@ -10,6 +10,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import com.example.pharmacyapp.Adapter.TransactionAdapter;
+import com.example.pharmacyapp.Model.TransactionModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +28,7 @@ public class TransactionDetails extends AppCompatActivity {
     RecyclerView transactionRecyclerView;
     DatabaseReference dbTransaction;
     TransactionAdapter adapter;
-    ArrayList<TransactionDataHolder> list;
+    ArrayList<TransactionModel> list;
 
     FirebaseUser user;
 
@@ -77,7 +79,7 @@ public class TransactionDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    TransactionDataHolder obj = data.getValue(TransactionDataHolder.class);
+                    TransactionModel obj = data.getValue(TransactionModel.class);
                     list.add(obj);
                 }
 
@@ -92,9 +94,9 @@ public class TransactionDetails extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<TransactionDataHolder> filteredList = new ArrayList<>();
+        ArrayList<TransactionModel> filteredList = new ArrayList<>();
 
-        for (TransactionDataHolder item : list) {
+        for (TransactionModel item : list) {
             if (item.getDate().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

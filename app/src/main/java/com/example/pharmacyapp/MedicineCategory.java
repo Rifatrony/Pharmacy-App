@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.pharmacyapp.Model.MedicineCategoryModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +55,7 @@ public class MedicineCategory extends AppCompatActivity {
         String category = medicine_category.getText().toString().trim();
 
 
-        MedicineCategoryDataHolder obj = new MedicineCategoryDataHolder(category, uid);
+        MedicineCategoryModel obj = new MedicineCategoryModel(category, uid);
 
         dbMedicineCategory= FirebaseDatabase.getInstance().getReference(user.getUid());
         dbMedicineCategory.child("Medicine").child("Medicine Category").child(uid).setValue(obj);

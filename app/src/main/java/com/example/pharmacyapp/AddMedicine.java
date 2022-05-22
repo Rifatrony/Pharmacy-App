@@ -3,7 +3,6 @@ package com.example.pharmacyapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +12,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.MedicineCategoryModel;
+import com.example.pharmacyapp.Model.StockMedicineModel;
+import com.example.pharmacyapp.Model.AddMedicineModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -150,7 +152,7 @@ public class AddMedicine extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot medicineCategory : snapshot.getChildren()){
 
-                    MedicineCategoryDataHolder data = medicineCategory.getValue(MedicineCategoryDataHolder.class);
+                    MedicineCategoryModel data = medicineCategory.getValue(MedicineCategoryModel.class);
                     if (data != null)
                     {
                         medicineCategoryList.add(data.getCategory());
@@ -295,7 +297,7 @@ public class AddMedicine extends AppCompatActivity {
             return;
         }
 
-        addMedicineDataHolder obj = new addMedicineDataHolder(m_name,box_pattern,m_category,m_unit,sell_price,
+        AddMedicineModel obj = new AddMedicineModel(m_name,box_pattern,m_category,m_unit,sell_price,
                 manufacture_price,shelf_no,s_manufacture,m_type,s_genericName, uid);
         FirebaseDatabase addMedicinedb = FirebaseDatabase.getInstance();
         DatabaseReference node = addMedicinedb.getReference(user.getUid());
@@ -307,7 +309,7 @@ public class AddMedicine extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference stockRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Stock Medicine/"+uid);
 
-                StockMedicineDataHolder obj = new StockMedicineDataHolder(s_manufacture, m_name,"","","","","0",manufacture_price, "", uid,m_unit, sell_price);
+                StockMedicineModel obj = new StockMedicineModel(s_manufacture, m_name,"","","","","0",manufacture_price, "", uid,m_unit, sell_price);
                 stockRef.setValue(obj);
             }
         });

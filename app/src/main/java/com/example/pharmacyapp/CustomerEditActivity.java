@@ -17,8 +17,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.CustomerModel;
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
 import com.example.pharmacyapp.databinding.ActivityCustomerEditBinding;
-import com.example.pharmacyapp.databinding.ActivitySupplierEditBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -50,7 +52,7 @@ public class CustomerEditActivity extends AppCompatActivity {
     String paidAmount, todayDate,transaction_Uid;
     String SupplierName;
     DatabaseReference dbCustomer;
-    CustomerDataHolder data;
+    CustomerModel data;
     double dueFromDb = 0;
     double finalDue = 0;
     boolean isValid = true;
@@ -113,7 +115,7 @@ public class CustomerEditActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                    data = snapshot.getValue(CustomerDataHolder.class);
+                    data = snapshot.getValue(CustomerModel.class);
 
                     if (data != null) {
 
@@ -199,7 +201,7 @@ public class CustomerEditActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot paymentType : snapshot.getChildren()){
-                    addAccountDataHolder data = paymentType.getValue(addAccountDataHolder.class);
+                    AddAccountModel data = paymentType.getValue(AddAccountModel.class);
                     if (data != null){
                         paymentTypeList.add(data.getBank_name());
                         accountBalanceList.add(data.getOpening_balance());
@@ -323,7 +325,7 @@ public class CustomerEditActivity extends AppCompatActivity {
 
         dbTransaction = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Transaction/"+transaction_Uid);
 
-        TransactionDataHolder data = new TransactionDataHolder(transaction_Uid,"Take Due from Customer", todayDate, paidAmount, payment_type, writtenName);
+        TransactionModel data = new TransactionModel(transaction_Uid,"Take Due from Customer", todayDate, paidAmount, payment_type, writtenName);
         dbTransaction.setValue(data);
 
 

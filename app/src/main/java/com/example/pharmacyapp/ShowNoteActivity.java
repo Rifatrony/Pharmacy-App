@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.pharmacyapp.Adapter.NoteAdapter;
+import com.example.pharmacyapp.Model.AddNoteModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,7 +28,7 @@ public class ShowNoteActivity extends AppCompatActivity {
     RecyclerView recview;
     NoteAdapter adapter;
     FloatingActionButton fb;
-    ArrayList<addNoteDataholder> list;
+    ArrayList<AddNoteModel> list;
     DatabaseReference dbNote;
 
 
@@ -80,7 +79,7 @@ public class ShowNoteActivity extends AppCompatActivity {
                 list.clear();
 
                 for (DataSnapshot data : snapshot.getChildren()){
-                    addNoteDataholder pd = data.getValue(addNoteDataholder.class);
+                    AddNoteModel pd = data.getValue(AddNoteModel.class);
                     list.add(pd);
                 }
 

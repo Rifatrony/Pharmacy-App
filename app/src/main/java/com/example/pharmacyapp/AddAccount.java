@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -116,7 +118,7 @@ public class AddAccount extends AppCompatActivity {
             return;
         }
 
-        addAccountDataHolder obj = new addAccountDataHolder(bank_name, account_name, account_number,account_type, branch , opening_balance, uid);
+        AddAccountModel obj = new AddAccountModel(bank_name, account_name, account_number,account_type, branch , opening_balance, uid);
 
         FirebaseDatabase addAccount = FirebaseDatabase.getInstance();
         DatabaseReference node = addAccount.getReference(user.getUid());
@@ -137,7 +139,7 @@ public class AddAccount extends AppCompatActivity {
 
                 dbTransaction = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Transaction/"+transaction_Uid);
 
-                TransactionDataHolder data = new TransactionDataHolder(transaction_Uid,"Account Opening Balance", todayDate, opening_balance, bank_name,account_name );
+                TransactionModel data = new TransactionModel(transaction_Uid,"Account Opening Balance", todayDate, opening_balance, bank_name,account_name );
                 dbTransaction.setValue(data);
 
             }

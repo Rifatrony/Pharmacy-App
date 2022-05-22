@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.pharmacyapp.Model.SellMedicineModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,7 +32,7 @@ public class SellDetails extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     SellAdapter adapter;
-    ArrayList<SellMedicineDataHolder> list;
+    ArrayList<SellMedicineModel> list;
 
     FirebaseUser user;
 
@@ -90,7 +91,7 @@ public class SellDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    SellMedicineDataHolder sdh = data.getValue(SellMedicineDataHolder.class);
+                    SellMedicineModel sdh = data.getValue(SellMedicineModel.class);
                     list.add(sdh);
                 }
 
@@ -106,9 +107,9 @@ public class SellDetails extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<SellMedicineDataHolder> filteredList = new ArrayList<>();
+        ArrayList<SellMedicineModel> filteredList = new ArrayList<>();
 
-        for (SellMedicineDataHolder item : list) {
+        for (SellMedicineModel item : list) {
             if (item.getMedicine_name().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

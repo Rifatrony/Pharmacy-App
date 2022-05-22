@@ -19,6 +19,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.CustomerModel;
+import com.example.pharmacyapp.Model.SellMedicineModel;
+import com.example.pharmacyapp.Model.StockMedicineModel;
+import com.example.pharmacyapp.Model.SupplierDataHolder;
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
+import com.example.pharmacyapp.Model.AddMedicineModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -29,8 +36,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -213,7 +218,7 @@ public class SellMedicine extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot customer_name : snapshot.getChildren()){
-                    CustomerDataHolder data = customer_name.getValue(CustomerDataHolder.class);
+                    CustomerModel data = customer_name.getValue(CustomerModel.class);
                     if (data!= null){
                         customerNameList.add(data.getCustomer_name());
                         customerUidList.add(data.getUid());
@@ -287,7 +292,7 @@ public class SellMedicine extends AppCompatActivity {
 
                 for (DataSnapshot medicineNamedata : snapshot.getChildren()){
 
-                    addMedicineDataHolder data = medicineNamedata.getValue(addMedicineDataHolder.class);
+                    AddMedicineModel data = medicineNamedata.getValue(AddMedicineModel.class);
 
                     if (data != null)
                     {
@@ -326,7 +331,7 @@ public class SellMedicine extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         if (snapshot.exists()) {
-                            StockMedicineDataHolder data = snapshot.getValue(StockMedicineDataHolder.class);
+                            StockMedicineModel data = snapshot.getValue(StockMedicineModel.class);
                             if (data != null) {
                                 stockQuantityTextView.setText(data.getStock_quantity());
                                 recentMedicineQuantity = Double.parseDouble(data.getStock_quantity());
@@ -442,7 +447,7 @@ public class SellMedicine extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot paymentType : snapshot.getChildren()){
-                    addAccountDataHolder data = paymentType.getValue(addAccountDataHolder.class);
+                    AddAccountModel data = paymentType.getValue(AddAccountModel.class);
                     if (data != null){
                         paymentTypeList.add(data.getBank_name());
                         accountBalanceList.add(data.getOpening_balance());
@@ -513,7 +518,7 @@ public class SellMedicine extends AppCompatActivity {
 
         String key = db.push().getKey();
 
-        SellMedicineDataHolder obj = new SellMedicineDataHolder(customer_name, medicine_name, sell_date, payment_type, stock_quantity,
+        SellMedicineModel obj = new SellMedicineModel(customer_name, medicine_name, sell_date, payment_type, stock_quantity,
                 sell_quantity, unit_sell_price, total_price, paid_amount, due_amount);
 
         FirebaseDatabase addAccount = FirebaseDatabase.getInstance();
@@ -529,7 +534,7 @@ public class SellMedicine extends AppCompatActivity {
                 System.out.println("TODAY's date is --> "+ todayDate);
 
                 String supplierUid = new SupplierDataHolder().getSupplier_uid();
-                String transactionUid = new TransactionDataHolder().getUid();
+                String transactionUid = new TransactionModel().getUid();
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -539,7 +544,7 @@ public class SellMedicine extends AppCompatActivity {
 
                 stockRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Transaction/"+transaction_Uid);
 
-                TransactionDataHolder data = new TransactionDataHolder(transaction_Uid,"Paid amount while sell Medicine", todayDate, paid_amount, payment_type, customer_name );
+                TransactionModel data = new TransactionModel(transaction_Uid,"Paid amount while sell Medicine", todayDate, paid_amount, payment_type, customer_name );
                 stockRef.setValue(data);
             }
         });

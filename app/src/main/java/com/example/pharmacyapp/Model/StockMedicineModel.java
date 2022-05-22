@@ -1,16 +1,16 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class StockMedicineDataHolder {
+public class StockMedicineModel {
 
     String manufactureName, medicineName, buyDate, paymentType, batchId, expireDate,
             stock_quantity, manufacturePrice, total_Price, uid, medicine_unit, sell_price;
 
-    public StockMedicineDataHolder() {
+    public StockMedicineModel() {
     }
 
-    public StockMedicineDataHolder(String manufactureName, String medicineName, String buyDate, String paymentType,
-                                   String batchId, String expireDate, String stock_quantity, String manufacturePrice,
-                                   String total_Price, String uid, String medicine_unit, String sell_price) {
+    public StockMedicineModel(String manufactureName, String medicineName, String buyDate, String paymentType,
+                              String batchId, String expireDate, String stock_quantity, String manufacturePrice,
+                              String total_Price, String uid, String medicine_unit, String sell_price) {
 
         this.manufactureName = manufactureName;
         this.medicineName = medicineName;

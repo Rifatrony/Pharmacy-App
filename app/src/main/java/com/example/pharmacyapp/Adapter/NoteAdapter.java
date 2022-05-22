@@ -1,16 +1,13 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.AddNoteModel;
+import com.example.pharmacyapp.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,9 +31,9 @@ import java.util.Map;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<addNoteDataholder> list;
+    ArrayList<AddNoteModel> list;
 
-    public NoteAdapter(Context context, ArrayList<addNoteDataholder> list) {
+    public NoteAdapter(Context context, ArrayList<AddNoteModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -49,7 +48,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        addNoteDataholder data = list.get(position);
+        AddNoteModel data = list.get(position);
 
         holder.title.setText(data.getTitle());
         holder.description.setText(data.getDescription());
@@ -78,7 +77,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                         map.put("description",descriptionEditText.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference(user.getUid()).child("Medicine").child("Note Details")
-                                .child(data.note_uid).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                .child(data.getNote_uid()).updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(holder.title.getContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
@@ -110,7 +109,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                                 FirebaseDatabase.getInstance().getReference(user.getUid()).child("Medicine").child("Note Details")
-                                        .child(data.note_uid).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        .child(data.getNote_uid()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
                                         Toast.makeText(holder.title.getContext(), "Deleted Successfully", Toast.LENGTH_LONG).show();

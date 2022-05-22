@@ -2,17 +2,14 @@ package com.example.pharmacyapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,13 +20,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.pharmacyapp.Model.StockMedicineModel;
+import com.example.pharmacyapp.Model.SupplierDataHolder;
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
+import com.example.pharmacyapp.Model.AddMedicineModel;
+import com.example.pharmacyapp.Model.purchaseMedicineModel;
 import com.example.pharmacyapp.databinding.ActivityPurchaseMedicineBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,7 +42,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 public class PurchaseMedicine extends AppCompatActivity {
@@ -63,7 +61,7 @@ public class PurchaseMedicine extends AppCompatActivity {
     String supplierUid;
     String transaction_Uid;
     String todayDate;
-    addAccountDataHolder data1;
+    AddAccountModel data1;
 
     DatabaseReference dbSupplier;
     SupplierDataHolder data;
@@ -419,7 +417,7 @@ public class PurchaseMedicine extends AppCompatActivity {
 
                 for (DataSnapshot medicineNamedata : snapshot.getChildren()){
 
-                    addMedicineDataHolder data = medicineNamedata.getValue(addMedicineDataHolder.class);
+                    AddMedicineModel data = medicineNamedata.getValue(AddMedicineModel.class);
                     if (data != null)
                     {
                         medicineNamelist.add(data.getM_name());
@@ -457,7 +455,7 @@ public class PurchaseMedicine extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         if (snapshot.exists()) {
-                            StockMedicineDataHolder data = snapshot.getValue(StockMedicineDataHolder.class);
+                            StockMedicineModel data = snapshot.getValue(StockMedicineModel.class);
                             if (data != null) {
                                 stockQuantityTextView.setText(data.getStock_quantity());
                                 recentMedicineQuantity = Double.parseDouble(data.getStock_quantity());
@@ -583,7 +581,7 @@ public class PurchaseMedicine extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot paymentType : snapshot.getChildren()){
-                    addAccountDataHolder data = paymentType.getValue(addAccountDataHolder.class);
+                    AddAccountModel data = paymentType.getValue(AddAccountModel.class);
                     if (data != null){
                         paymentTypeList.add(data.getBank_name());
                         accountBalanceList.add(data.getOpening_balance());
@@ -671,7 +669,7 @@ public class PurchaseMedicine extends AppCompatActivity {
 
         //Here will come stock quantity from stock table
 
-        purchaseMedicineDataHolder obj = new purchaseMedicineDataHolder(s_manufacture, s_medicine_name, buy_date, payment_type, batch_id, expire_date, quantity, manufacture_price, total_price, purchase_paid_amount, purchase_due_amount, purchase_Uid, s_supplier_name, account_balance);
+        purchaseMedicineModel obj = new purchaseMedicineModel(s_manufacture, s_medicine_name, buy_date, payment_type, batch_id, expire_date, quantity, manufacture_price, total_price, purchase_paid_amount, purchase_due_amount, purchase_Uid, s_supplier_name, account_balance);
 
         assert user != null;
         databaseReference= FirebaseDatabase.getInstance().getReference(user.getUid());
@@ -687,7 +685,7 @@ public class PurchaseMedicine extends AppCompatActivity {
                 System.out.println("TODAY's date is --> "+ todayDate);
 
                 String supplierUid = new SupplierDataHolder().getSupplier_uid();
-                String transactionUid = new TransactionDataHolder().getUid();
+                String transactionUid = new TransactionModel().getUid();
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -697,7 +695,7 @@ public class PurchaseMedicine extends AppCompatActivity {
 
                 stockRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Transaction/"+transaction_Uid);
 
-                TransactionDataHolder data = new TransactionDataHolder(transaction_Uid,"Paid supplier when Purchase Medicine", todayDate,purchase_paid_amount,payment_type,s_supplier_name );
+                TransactionModel data = new TransactionModel(transaction_Uid,"Paid supplier when Purchase Medicine", todayDate,purchase_paid_amount,payment_type,s_supplier_name );
                 stockRef.setValue(data);
             }
         });

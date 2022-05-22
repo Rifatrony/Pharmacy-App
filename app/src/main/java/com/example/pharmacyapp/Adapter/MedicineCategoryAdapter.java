@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.MedicineCategoryModel;
+import com.example.pharmacyapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,9 +31,9 @@ import java.util.Map;
 public class MedicineCategoryAdapter extends RecyclerView.Adapter<MedicineCategoryAdapter.MyViewHolder>{
 
     Context context;
-    ArrayList<MedicineCategoryDataHolder> list;
+    ArrayList<MedicineCategoryModel> list;
 
-    public MedicineCategoryAdapter(Context context, ArrayList<MedicineCategoryDataHolder> list) {
+    public MedicineCategoryAdapter(Context context, ArrayList<MedicineCategoryModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -46,7 +48,7 @@ public class MedicineCategoryAdapter extends RecyclerView.Adapter<MedicineCatego
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        MedicineCategoryDataHolder data = list.get(position);
+        MedicineCategoryModel data = list.get(position);
 
         holder.medicineCategoryTextView.setText(data.getCategory());
 

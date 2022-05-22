@@ -9,15 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.SellMedicineModel;
+
 import java.util.ArrayList;
 
 public class SellAdapter extends RecyclerView.Adapter<SellAdapter.MyViewHolder> {
 
 
     Context context;
-    ArrayList<SellMedicineDataHolder> list;
+    ArrayList<SellMedicineModel> list;
 
-    public SellAdapter(Context context, ArrayList<SellMedicineDataHolder> list) {
+    public SellAdapter(Context context, ArrayList<SellMedicineModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -32,7 +34,7 @@ public class SellAdapter extends RecyclerView.Adapter<SellAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        SellMedicineDataHolder data = list.get(position);
+        SellMedicineModel data = list.get(position);
         holder.sellMedicineCustomerTextView.setText(data.getCustomer_name());
         holder.sellMedicineNameTextView.setText(data.getMedicine_name());
         holder.sellDateTextView.setText(data.getSell_date());
@@ -49,7 +51,7 @@ public class SellAdapter extends RecyclerView.Adapter<SellAdapter.MyViewHolder> 
     }
 
 
-    public void filterList(ArrayList<SellMedicineDataHolder> filteredList) {
+    public void filterList(ArrayList<SellMedicineModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

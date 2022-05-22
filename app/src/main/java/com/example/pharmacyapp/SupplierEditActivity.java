@@ -16,6 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pharmacyapp.Model.SupplierDataHolder;
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.Model.AddAccountModel;
 import com.example.pharmacyapp.databinding.ActivitySupplierEditBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -189,7 +192,7 @@ public class SupplierEditActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot paymentType : snapshot.getChildren()){
-                    addAccountDataHolder data = paymentType.getValue(addAccountDataHolder.class);
+                    AddAccountModel data = paymentType.getValue(AddAccountModel.class);
                     if (data != null){
                         paymentTypeList.add(data.getBank_name());
                         accountBalanceList.add(data.getOpening_balance());
@@ -312,7 +315,7 @@ public class SupplierEditActivity extends AppCompatActivity {
 
         dbTransaction = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Medicine/Transaction/"+transaction_Uid);
 
-        TransactionDataHolder data = new TransactionDataHolder(transaction_Uid,"Paid Due to Supplier", todayDate, paidAmount, payment_type, writtenName);
+        TransactionModel data = new TransactionModel(transaction_Uid,"Paid Due to Supplier", todayDate, paidAmount, payment_type, writtenName);
         dbTransaction.setValue(data);
 
 

@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,20 +7,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.pharmacyapp.R;
+import com.example.pharmacyapp.Model.StockMedicineModel;
 
 import java.util.ArrayList;
 
 public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder>{
 
     Context context;
-    ArrayList<StockMedicineDataHolder> list;
+    ArrayList<StockMedicineModel> list;
 
-    public StockAdapter(Context context, ArrayList<StockMedicineDataHolder> list) {
+    public StockAdapter(Context context, ArrayList<StockMedicineModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -35,7 +34,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        StockMedicineDataHolder data = list.get(position);
+        StockMedicineModel data = list.get(position);
         holder.medicine_name.setText(data.getMedicineName());
         holder.manufacture.setText(data.getManufactureName());
         holder.stock_quantity.setText(data.getStock_quantity());
@@ -49,7 +48,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.MyViewHolder
         return list.size();
     }
 
-    public void filterList(ArrayList<StockMedicineDataHolder> filteredList) {
+    public void filterList(ArrayList<StockMedicineModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

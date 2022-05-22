@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.pharmacyapp.Adapter.DueCustomerAdapter;
+import com.example.pharmacyapp.Model.CustomerModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +25,7 @@ public class DueCustomer extends AppCompatActivity {
 
     RecyclerView dueCustomerRecyclerView;
     DatabaseReference dbCustomer;
-    List<CustomerDataHolder> list;
+    List<CustomerModel> list;
     DueCustomerAdapter adapter;
 
     String uid;
@@ -62,7 +64,7 @@ public class DueCustomer extends AppCompatActivity {
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
-                    CustomerDataHolder data = snapshot1.getValue(CustomerDataHolder.class);
+                    CustomerModel data = snapshot1.getValue(CustomerModel.class);
                     if (data != null && Double.parseDouble(data.getTotal_due()) > 0) {
 
                         list.add(data);

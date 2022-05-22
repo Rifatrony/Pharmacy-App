@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,14 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.CustomerModel;
+import com.example.pharmacyapp.CustomerEditActivity;
+import com.example.pharmacyapp.R;
+
 import java.util.List;
 
 public class DueCustomerAdapter extends RecyclerView.Adapter<DueCustomerAdapter.CustomerViewHolder> {
 
     Context context;
-    List<CustomerDataHolder> list;
+    List<CustomerModel> list;
 
-    public DueCustomerAdapter(Context context, List<CustomerDataHolder> list) {
+    public DueCustomerAdapter(Context context, List<CustomerModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -37,7 +41,7 @@ public class DueCustomerAdapter extends RecyclerView.Adapter<DueCustomerAdapter.
 
         if (list.size() > 0) {
 
-            CustomerDataHolder data = list.get(position);
+            CustomerModel data = list.get(position);
 
             holder.customer_name.setText(data.getCustomer_name());
             holder.customer_due.setText(data.getTotal_due());

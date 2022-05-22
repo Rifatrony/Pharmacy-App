@@ -1,10 +1,10 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class manufactureDataHolder {
+public class ManufactureModel {
 
     String manuName;
 
-    public manufactureDataHolder(String manuName) {
+    public ManufactureModel(String manuName) {
         this.manuName = manuName;
     }
 

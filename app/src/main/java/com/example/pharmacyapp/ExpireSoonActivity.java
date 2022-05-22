@@ -6,17 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
+import com.example.pharmacyapp.Adapter.ShowExpireSoonAdapter;
+import com.example.pharmacyapp.Model.StockMedicineModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -25,7 +24,7 @@ import java.util.Locale;
 public class ExpireSoonActivity extends AppCompatActivity {
     TextView formDateTextView, toDateTextView;
     RecyclerView expireSoonRecyclerView;
-    showExpireSoonAdapter adapter;
+    ShowExpireSoonAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +56,11 @@ public class ExpireSoonActivity extends AppCompatActivity {
 
         expireSoonRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<StockMedicineDataHolder> options =
-                new FirebaseRecyclerOptions.Builder<StockMedicineDataHolder>()
+        FirebaseRecyclerOptions<StockMedicineModel> options =
+                new FirebaseRecyclerOptions.Builder<StockMedicineModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference(user.getUid()).child("Medicine").child("Stock Medicine")
-                                .orderByChild("medicineName").startAt(currentDate),StockMedicineDataHolder.class).build();
-        adapter = new showExpireSoonAdapter(options);
+                                .orderByChild("medicineName").startAt(currentDate), StockMedicineModel.class).build();
+        adapter = new ShowExpireSoonAdapter(options);
         expireSoonRecyclerView.setAdapter(adapter);
     }
 

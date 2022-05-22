@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.SupplierDataHolder;
+import com.example.pharmacyapp.R;
+import com.example.pharmacyapp.SupplierEditActivity;
 import com.example.pharmacyapp.databinding.SupplierDemoViewholderBinding;
 
 import java.util.List;

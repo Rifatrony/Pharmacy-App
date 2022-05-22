@@ -11,6 +11,8 @@ import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import com.example.pharmacyapp.Adapter.CustomerAdapter;
+import com.example.pharmacyapp.Model.CustomerModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +30,7 @@ public class CustomerDetails extends AppCompatActivity {
 
     DatabaseReference dbCustomer;
     CustomerAdapter adapter;
-    ArrayList<CustomerDataHolder> list;
+    ArrayList<CustomerModel> list;
 
 
     FirebaseUser user;
@@ -62,7 +64,7 @@ public class CustomerDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    CustomerDataHolder pd = data.getValue(CustomerDataHolder.class);
+                    CustomerModel pd = data.getValue(CustomerModel.class);
                     list.add(pd);
                 }
 
@@ -108,9 +110,9 @@ public class CustomerDetails extends AppCompatActivity {
     }
 
     private void filter(String text) {
-        ArrayList<CustomerDataHolder> filteredList = new ArrayList<>();
+        ArrayList<CustomerModel> filteredList = new ArrayList<>();
 
-        for (CustomerDataHolder item : list) {
+        for (CustomerModel item : list) {
             if (item.getCustomer_name().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

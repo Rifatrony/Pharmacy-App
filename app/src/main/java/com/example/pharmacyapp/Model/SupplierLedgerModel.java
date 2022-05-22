@@ -1,13 +1,13 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class supplierLedgerDataHolder {
+public class SupplierLedgerModel {
 
     String purchase_Uid, supplierUid, t_quantity;
 
-    public supplierLedgerDataHolder() {
+    public SupplierLedgerModel() {
     }
 
-    public supplierLedgerDataHolder(String purchase_Uid, String supplierUid, String t_quantity) {
+    public SupplierLedgerModel(String purchase_Uid, String supplierUid, String t_quantity) {
         this.purchase_Uid = purchase_Uid;
         this.supplierUid = supplierUid;
         this.t_quantity = t_quantity;

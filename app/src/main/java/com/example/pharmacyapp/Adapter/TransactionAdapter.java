@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,14 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pharmacyapp.Model.TransactionModel;
+import com.example.pharmacyapp.R;
+
 import java.util.ArrayList;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.MyViewHolder>{
 
     Context context;
-    ArrayList<TransactionDataHolder> list;
+    ArrayList<TransactionModel> list;
 
-    public TransactionAdapter(Context context, ArrayList<TransactionDataHolder> list) {
+    public TransactionAdapter(Context context, ArrayList<TransactionModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,7 +34,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        TransactionDataHolder data = list.get(position);
+        TransactionModel data = list.get(position);
 
         holder.bank_name.setText(data.getBank());
         holder.date.setText(data.getDate());
@@ -46,7 +49,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         return list.size();
     }
 
-    public void filterList(ArrayList<TransactionDataHolder> filteredList) {
+    public void filterList(ArrayList<TransactionModel> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
     }

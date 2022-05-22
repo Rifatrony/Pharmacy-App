@@ -8,7 +8,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.pharmacyapp.databinding.ActivitySupplierBinding;
+import com.example.pharmacyapp.Adapter.SupplierAdapter;
+import com.example.pharmacyapp.Model.SupplierDataHolder;
 import com.example.pharmacyapp.databinding.ActivityViewDueSupplierBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

@@ -1,17 +1,17 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Model;
 
-public class addMedicineDataHolder {
+public class AddMedicineModel {
     String m_name,box_pattern,m_category,m_unit,sell_price,
             manufacture_price,shelf_no,s_manufacture,m_type,
             s_genericName, uid;
 
-    addMedicineDataHolder(){
+    AddMedicineModel(){
 
     }
 
-    public addMedicineDataHolder(String m_name, String box_pattern, String m_category, String m_unit, String sell_price,
-                                 String manufacture_price, String shelf_no, String s_manufacture, String m_type,
-                                 String s_genericName, String uid) {
+    public AddMedicineModel(String m_name, String box_pattern, String m_category, String m_unit, String sell_price,
+                            String manufacture_price, String shelf_no, String s_manufacture, String m_type,
+                            String s_genericName, String uid) {
         this.m_name = m_name;
         this.box_pattern = box_pattern;
         this.m_category = m_category;

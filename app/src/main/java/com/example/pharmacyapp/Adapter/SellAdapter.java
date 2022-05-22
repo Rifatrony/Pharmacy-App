@@ -1,4 +1,4 @@
-package com.example.pharmacyapp;
+package com.example.pharmacyapp.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pharmacyapp.Model.SellMedicineModel;
+import com.example.pharmacyapp.R;
 
 import java.util.ArrayList;
 

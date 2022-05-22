@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Accounts extends AppCompatActivity {
+public class AccountsActivity extends AppCompatActivity {
 
     FloatingActionButton fabAccount;
 
@@ -51,7 +51,7 @@ public class Accounts extends AppCompatActivity {
         fabAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(),AddAccount.class);
+                Intent intent= new Intent(getApplicationContext(), AddAccountActivity.class);
                 startActivity(intent);
             }
         });

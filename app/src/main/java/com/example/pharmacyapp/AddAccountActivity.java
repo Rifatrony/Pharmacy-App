@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddAccount extends AppCompatActivity {
+public class AddAccountActivity extends AppCompatActivity {
 
     TextInputLayout bankNameEditText, accountNameEditText, accountNumberEditText, accountTypeEditText, branchEditText, openingBalanceEditText;
     Button saveAccountButton;

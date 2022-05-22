@@ -87,7 +87,7 @@ public class AddCustomer extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),"Customer Successfully",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(this, CustomerDetails.class);
+        Intent intent = new Intent(this, CustomerDetailsActivity.class);
         startActivity(intent);
         finish();
         customer_nameEditText.setText("");

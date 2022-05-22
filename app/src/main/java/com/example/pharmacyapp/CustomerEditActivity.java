@@ -342,7 +342,7 @@ public class CustomerEditActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
 
                 Toast.makeText(CustomerEditActivity.this, "Supplier Deleted Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(CustomerEditActivity.this, DueCustomer.class));
+                startActivity(new Intent(CustomerEditActivity.this, DueCustomerActivity.class));
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {

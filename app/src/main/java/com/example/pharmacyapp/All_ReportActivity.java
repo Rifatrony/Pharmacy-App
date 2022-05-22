@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class All_Report extends AppCompatActivity {
+public class All_ReportActivity extends AppCompatActivity {
 
 
     Button purchaseDetailsButton, sellDetailsButton;
@@ -32,7 +32,7 @@ public class All_Report extends AppCompatActivity {
         purchaseDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(All_Report.this, PurchaseDetails.class );
+                Intent intent = new Intent(All_ReportActivity.this, PurchaseDetails.class );
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class All_Report extends AppCompatActivity {
         sellDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(All_Report.this, SellDetails.class );
+                Intent intent = new Intent(All_ReportActivity.this, SellDetails.class );
                 startActivity(intent);
             }
         });

@@ -75,7 +75,7 @@ public class MedicineAll extends AppCompatActivity implements View.OnClickListen
             startActivity(intent);
         }
         if (view.getId()==R.id.addMedicineCardViewId){
-            Intent intent = new Intent(this,AddMedicine.class);
+            Intent intent = new Intent(this, AddMedicineActivity.class);
             startActivity(intent);
         }
     }

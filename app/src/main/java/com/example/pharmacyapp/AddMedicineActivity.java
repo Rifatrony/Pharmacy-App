@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AddMedicine extends AppCompatActivity {
+public class AddMedicineActivity extends AppCompatActivity {
 
     EditText medicineNameEditText, boxPatternEditText, medicineUnitEditText,
             sellPriceEditText, manufacturePriceEditText, shelfNumberEditText;

@@ -24,10 +24,10 @@
             android:name=".CustomerEditActivity"
             android:exported="false" />
         <activity
-            android:name=".CustomerDetails"
+            android:name=".CustomerDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".DueCustomer"
+            android:name=".DueCustomerActivity"
             android:exported="false" />
         <activity
             android:name=".AddCustomer"
@@ -57,7 +57,7 @@
             android:name=".SupplierActivity"
             android:exported="false" />
         <activity
-            android:name=".All_Report"
+            android:name=".All_ReportActivity"
             android:exported="false" />
         <activity
             android:name=".ExpireSoonActivity"
@@ -66,16 +66,13 @@
             android:name=".StockMedicine"
             android:exported="false" />
         <activity
-            android:name=".AddAccount"
+            android:name=".AddAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".Accounts"
+            android:name=".AccountsActivity"
             android:exported="false" />
         <activity
             android:name=".SellMedicine"
-            android:exported="false" />
-        <activity
-            android:name=".PurchaseMedicine2"
             android:exported="false" />
         <activity
             android:name=".AddNoteActivity"
@@ -90,7 +87,7 @@
             android:name=".ViewMedicineActivity"
             android:exported="true" />
         <activity
-            android:name=".AddMedicine"
+            android:name=".AddMedicineActivity"
             android:exported="true" />
         <activity
             android:name=".Manufacture"

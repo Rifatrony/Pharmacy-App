@@ -43,12 +43,12 @@ public class CustomerRadioActivity extends AppCompatActivity {
                 break;
 
             case R.id.radio_two:
-                Intent intent1 = new Intent(getApplicationContext(), CustomerDetails.class);
+                Intent intent1 = new Intent(getApplicationContext(), CustomerDetailsActivity.class);
                 startActivity(intent1);
                 break;
 
             case R.id.radio_three:
-                Intent intent2 = new Intent(getApplicationContext(), DueCustomer.class);
+                Intent intent2 = new Intent(getApplicationContext(), DueCustomerActivity.class);
                 startActivity(intent2);
                 break;
         }

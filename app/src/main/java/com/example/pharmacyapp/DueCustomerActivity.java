@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DueCustomer extends AppCompatActivity {
+public class DueCustomerActivity extends AppCompatActivity {
 
     RecyclerView dueCustomerRecyclerView;
     DatabaseReference dbCustomer;
@@ -72,7 +72,7 @@ public class DueCustomer extends AppCompatActivity {
                     }
                 }
 
-                adapter = new DueCustomerAdapter(DueCustomer.this, list);
+                adapter = new DueCustomerAdapter(DueCustomerActivity.this, list);
                 dueCustomerRecyclerView.setAdapter(adapter);
 
             }

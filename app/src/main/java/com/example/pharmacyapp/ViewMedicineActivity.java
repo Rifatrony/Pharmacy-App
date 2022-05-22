@@ -54,7 +54,7 @@ public class ViewMedicineActivity extends AppCompatActivity {
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),AddMedicine.class);
+                Intent intent = new Intent(getApplicationContext(), AddMedicineActivity.class);
                 startActivity(intent);
             }
         });

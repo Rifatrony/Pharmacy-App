@@ -299,7 +299,7 @@ public class MainDashBoard extends AppCompatActivity implements View.OnClickList
         }
 
         if (view.getId()==R.id.accountLayoutId){
-            Intent intent = new Intent(getApplicationContext(),Accounts.class);
+            Intent intent = new Intent(getApplicationContext(), AccountsActivity.class);
             startActivity(intent);
         }
 
@@ -314,7 +314,7 @@ public class MainDashBoard extends AppCompatActivity implements View.OnClickList
         }
 
         if (view.getId()==R.id.allReportLayoutId){
-            Intent intent = new Intent(this,All_Report.class);
+            Intent intent = new Intent(this, All_ReportActivity.class);
             startActivity(intent);
         }
 

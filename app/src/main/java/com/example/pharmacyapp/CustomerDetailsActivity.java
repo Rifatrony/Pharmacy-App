@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class CustomerDetails extends AppCompatActivity {
+public class CustomerDetailsActivity extends AppCompatActivity {
 
     RecyclerView customerDetails;
     EditText customerSearchEditText;
@@ -54,7 +54,7 @@ public class CustomerDetails extends AppCompatActivity {
         dbCustomer = FirebaseDatabase.getInstance().getReference(user.getUid()).child("Medicine").child("Customer");
 
         customerDetails.setHasFixedSize(true);
-        customerDetails.setLayoutManager(new LinearLayoutManager(CustomerDetails.this));
+        customerDetails.setLayoutManager(new LinearLayoutManager(CustomerDetailsActivity.this));
 
         list = new ArrayList<>();
         adapter = new CustomerAdapter(this,list);

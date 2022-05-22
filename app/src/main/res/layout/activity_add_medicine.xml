@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:background="#E9EDF1"
-    tools:context=".AddMedicine">
+    tools:context=".AddMedicineActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -6,34 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".Accounts">
-
-    <!--<androidx.cardview.widget.CardView
-        android:id="@+id/bankAccountCardViewId"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        app:cardCornerRadius="10dp"
-        android:clickable="true"
-        android:layout_marginBottom="20dp"
-        android:layout_height="80dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/card_background6">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/bank_Account"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:textSize="25sp"
-                />
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>-->
-
+    tools:context=".AccountsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/accountRecyclerView"
